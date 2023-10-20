@@ -56,7 +56,8 @@ export default defineNuxtConfig({
   },
   css: [
     '@sfxcode/formkit-primevue/dist/sass/formkit-prime-inputs.scss',
-    '@sfxcode/formkit-primevue/dist/sass/formkit-primevue.scss'
+    '@sfxcode/formkit-primevue/dist/sass/formkit-primevue.scss',
+    'primevue/resources/themes/saga-blue/theme.css'
   ],
   pinia: {
     autoImports: [

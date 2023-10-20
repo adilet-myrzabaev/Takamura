@@ -1,5 +1,5 @@
 .logo{
-  width: 50px;
+  width: 40px;
 }
 .menu{
   display: flex;
@@ -27,6 +27,8 @@
   gap: 4px;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
+  background: none;
   .burger-item{
     width: 20px;
     height: 2px;
@@ -76,7 +78,7 @@
 }
 .product-caption{
   color: #1F1E23;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Victor Mono', monospace;
   font-size: 17.031px;
   font-style: normal;
   font-weight: 600;
@@ -90,7 +92,7 @@
   font-size: 13.344px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16.1px; /* 120.656% */
+  line-height: 16.1px;
   letter-spacing: 0.72px;
 }
 .tab-menu{
@@ -98,17 +100,48 @@
     gap: 10px;
     flex-wrap: wrap;
   }
-  .p-tabmenu .p-tabmenu-nav.p-reset li{
+  .p-tabmenu .p-tabmenu-nav.p-reset .p-tabmenuitem{
     border: 1px solid;
     border-radius: 15px;
+    padding: 10px;
   }
   .p-tabmenu .p-tabmenu-nav.p-reset li a span{
     color: #000;
-    font-family: Inter;
+    font-family: 'Victor Mono', monospace;
     font-size: 16.188px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 200;
     line-height: 21px;
     letter-spacing: 0.72px;
   }
+}
+.carousel-parent{
+  .carousel-caption{
+    color: #000;
+    font-family: 'Victor Mono', monospace;
+    font-size: 39.648px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 70px;
+    letter-spacing: 3px;
+  }
+  .carousel-description{
+    color: #000;
+    font-family: 'Victor Mono', monospace;
+    font-size: 15.25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.72px;
+  }
+}
+.dialog-menu{
+  height: 100% !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  width: 40vw !important;
+  .p-dialog-content{
+    height: 100%;
+  }
+
 }
