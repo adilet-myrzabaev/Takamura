@@ -1,78 +1,168 @@
 <script setup lang='ts'>
-import { computed, watch, ref } from 'vue'
-
+import { ref, onMounted, watch } from "vue";
+import { useRoute, useRouter } from 'vue-router';
 import { useThemeStore } from '~/stores'
-import AppMenu from '~/components/app/AppMenu.vue'
-const { layoutConfig, layoutState, isSidebarActive } = useLayout()
-const outsideClickListener = ref(null)
+
 const themeStore = useThemeStore()
-watch(isSidebarActive, (newVal) => {
-  if (newVal) {
-    bindOutsideClickListener()
-  } else {
-    unbindOutsideClickListener()
+
+const productsCarousel = ref([
+  {
+    id: 1,
+    img: 'https://takamura-eats.ru/userfls/bs/1_42.jpg',
+    caption: 'Роллы Takamura',
+    description: 'Лосось, тунец, тигровые креветки и морской гребешок в наших роллах приправлены исключительно натуральными соусами.',
+  },
+  {
+    id: 2,
+    img: 'https://takamura-eats.ru/userfls/bs/3-1_41.jpg',
+    caption: 'Роллы Takamura',
+    description: 'Лосось, тунец, тигровые креветки и морской гребешок в наших роллах приправлены исключительно натуральными соусами.',
+  },
+  {
+    id: 3,
+    img: 'https://takamura-eats.ru/userfls/bs/2_43.jpg',
+    caption: 'Роллы Takamura',
+    description: 'Лосось, тунец, тигровые креветки и морской гребешок в наших роллах приправлены исключительно натуральными соусами.',
+  },
+]);
+const responsiveOptions = ref([
+  {
+    breakpoint: '1199px',
+    numVisible: 1,
+    numScroll: 1
+  },
+  {
+    breakpoint: '991px',
+    numVisible: 1,
+    numScroll: 1
+  },
+  {
+    breakpoint: '767px',
+    numVisible: 1,
+    numScroll: 1
   }
+]);
+
+
+const router = useRouter();
+const route = useRoute();
+
+const active = ref(0);
+const productsItems = ref([
+  {
+    label: 'Наборы',
+    route: '/sets'
+  },
+  {
+    label: 'Суши',
+    route: '/sushi'
+  },
+  {
+    label: 'Роллы',
+    route: '/rolls'
+  },
+  {
+    label: 'Теплые Роллы',
+    route: '/warmRolls'
+  },
+  {
+    label: 'Маки',
+    route: '/maki'
+  },
+  {
+    label: 'Салаты',
+    route: '/salads'
+  },
+  {
+    label: 'Напитки',
+    route: '/drinks'
+  },
+  {
+    label: 'Соусы',
+    route: '/sauces'
+  },
+]);
+
+onMounted(() => {
+  active.value = productsItems.value.findIndex((item) => route.path === router.resolve(item.route).path);
 })
-const containerClass = computed(() => {
-  return {
-    'layout-theme-light': layoutConfig.darkTheme.value === 'light',
-    'layout-theme-dark': layoutConfig.darkTheme.value === 'dark',
-    'layout-overlay': layoutConfig.menuMode.value === 'overlay',
-    'layout-static': layoutConfig.menuMode.value === 'static',
-    'layout-static-inactive': layoutState.staticMenuDesktopInactive.value && layoutConfig.menuMode.value === 'static',
-    'layout-overlay-active': layoutState.overlayMenuActive.value,
-    'layout-mobile-active': layoutState.staticMenuMobileActive.value,
-    'p-input-filled': layoutConfig.inputStyle.value === 'filled',
-    'p-ripple-disabled': !layoutConfig.ripple.value
-  }
-})
 
-const bindOutsideClickListener = () => {
-  if (!outsideClickListener.value) {
-    outsideClickListener.value = (event) => {
-      if (isOutsideClicked(event)) {
-        layoutState.overlayMenuActive.value = false
-        layoutState.staticMenuMobileActive.value = false
-        layoutState.menuHoverActive.value = false
-      }
-    }
+watch(route, () => {
+      active.value = productsItems.value.findIndex((item) => route.path === router.resolve(item.route).path);
+    },
+    { immediate: true }
+);
 
-    document.addEventListener('click', outsideClickListener.value)
-  }
-}
 
-const unbindOutsideClickListener = () => {
-  if (outsideClickListener.value) {
-    document.removeEventListener('click', outsideClickListener)
-    outsideClickListener.value = null
-  }
-}
-
-const isOutsideClicked = (event) => {
-  const sidebarEl = document.querySelector('.layout-sidebar')
-  const topbarEl = document.querySelector('.layout-menu-button')
-
-  return !(sidebarEl.isSameNode(event.target) || sidebarEl.contains(event.target) || topbarEl.isSameNode(event.target) || topbarEl.contains(event.target))
-}
 </script>
 
 <template>
   <div>
-    <Link rel="stylesheet" :href="themeStore.link || 'https://cdn.jsdelivr.net/npm/primevue@3.15.0/resources/themes/vela-blue/theme.css'" />
-    <div class="layout-wrapper" :class="containerClass">
-      <app-topbar />
-      <div class="layout-sidebar">
-        <app-menu />
-      </div>
-      <div class="layout-main-container">
-        <div class="layout-main">
-          <slot />
+    <Link rel="stylesheet" :href="themeStore.link" />
+    <header>
+      <div class='container'>
+        <div class='flex justify-content-between align-items-center py-3'>
+          <div class='logo'>
+            <img class='w-full' src='https://takamura-eats.ru/custom/my/img/logo22.png' alt=''>
+          </div>
+          <ul class='menu'>
+            <li class='menu__item'>
+              <a class='menu-link' href='tel:+7(499)1123817' style='letter-spacing: 0.72px;'>+7(499)112-38-17</a>
+            </li>
+            <li class='menu__item'>
+              <router-link class='menu-link border-1 border-circle p-1' to=''><i class='pi pi-info text-sm'></i></router-link>
+            </li>
+            <li class='menu__item'>
+              <router-link class='menu-link' to=''><i class='pi pi-map text-xl'></i></router-link>
+            </li>
+            <li class='menu__item'>
+              <router-link class='menu-link' to=''><i class='pi pi-shopping-cart text-xl'></i></router-link>
+            </li>
+            <li>
+              <div class='burger'>
+                <div class='burger-item'></div>
+                <div class='burger-item'></div>
+                <div class='burger-item'></div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <app-footer />
       </div>
-      <div class="layout-mask" />
-    </div>
+    </header>
+    <section>
+      <div class='container'>
+        <div class='grid carousel-parent'>
+          <div class='col-12'>
+            <Carousel :value="productsCarousel" :numVisible="1" :numScroll="1" :responsiveOptions="responsiveOptions" circular :autoplayInterval="6000">
+              <template #item="slotProps">
+                <div class="flex border-1 surface-border border-round m-2 text-center py-5 px-3">
+                  <div class="mb-3">
+                    <img :src="slotProps.data.img" :alt="slotProps.data.name" class="h-full w-10 shadow-3" />
+                  </div>
+                  <div class="flex flex-column justify-content-center relative ml-3">
+                    <h4 class="mb-1 text-left">{{ slotProps.data.caption }}</h4>
+                    <h6 class="mt-0 mb-3 text-left">{{ slotProps.data.description }}</h6>
+                    <div class="absolute bottom-0 right-0 flex align-items-center">
+                      <button class=' pr-3 border-none bg-transparent'>что ещё </button>
+                      <i class='pi pi-angle-right'></i>
+                    </div>
+                  </div>
+
+                </div>
+              </template>
+            </Carousel>
+          </div>
+        </div>
+        <div class='grid tab-menu mt-5'>
+          <div class='col-12'>
+            <TabMenu v-model:activeIndex="active" :model="productsItems">
+
+            </TabMenu>
+            <slot />
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
-
-<style lang="scss" scoped></style>
