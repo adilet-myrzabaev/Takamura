@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { ref } from 'vue';
 
+const router = useRouter()
 const count = ref(0)
 const productsSets = ref([
   {

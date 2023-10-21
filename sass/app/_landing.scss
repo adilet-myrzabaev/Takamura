@@ -140,8 +140,16 @@
   max-height: 100vh !important;
   margin: 0 !important;
   width: 40vw !important;
+  .p-dialog-header{
+    img{
+      width: 40px !important;
+    }
+  }
   .p-dialog-content{
     height: 100%;
   }
+}
+.dialog-menu--full{
+  width: 100vw !important;
 
 }
