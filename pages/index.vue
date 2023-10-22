@@ -74,9 +74,9 @@ const  minusNum = () => {
               <div class='flex align-items-center justify-content-between'>
                 <p class='text-xl product-caption mb-0'>{{product.price}}. -</p>
                 <div class='flex align-items-center'>
-                  <button v-if='count>0' class='border-1 mr-3' style='border-radius: 7px' @click='minusNum'><i class='pi pi-minus p-1'></i></button>
+                  <button v-if='count>0' class='border-1 mr-3 btn-count' @click='minusNum'><i class='pi pi-minus p-1'></i></button>
                   <span v-if='count'>{{ count }}</span>
-                  <button class='border-1 ml-3' style='border-radius: 7px' @click='countNum'><i class='pi pi-plus p-1'></i></button>
+                  <button class='border-1 ml-3 btn-count' @click='countNum'><i class='pi pi-plus p-1'></i></button>
                 </div>
               </div>
             </template>

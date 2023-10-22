@@ -1,5 +1,6 @@
 <script setup>
 useHead({
+  image: 'https://takamura-eats.ru/custom/my/img/logo22.png',
   title: 'Takamura'
 })
 </script>

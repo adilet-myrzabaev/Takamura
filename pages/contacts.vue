@@ -6,26 +6,38 @@
           <div class="grid">
             <div class="col-12">
               <div class="card">
-                <h1>TAKAMURA В МАРЬИНОЙ РОЩЕ</h1>
-                <p>ТРЦ Райкин Плаза</p>
-                <p>Шереметьевская ул. 6к1</p>
-                <p>Ежедневно с 10.00 до 23.00</p>
+                <h1 class="dialog-caption">
+                  <span class="border-bottom-1">
+                    TAKAMURA В МАРЬИНОЙ РОЩЕ
+                  </span>
+                </h1>
+                <p class="dialog-description">ТРЦ Райкин Плаза</p>
+                <p class="dialog-description">Шереметьевская ул. 6к1</p>
+                <p class="dialog-description">Ежедневно с 10.00 до 23.00</p>
               </div>
             </div>
             <div class="col-12">
               <div class="card">
-                <h1>TAKAMURA В СОЛНЦЕВО</h1>
-                <p>Порт Пивных Дегустаторов</p>
-                <p>Производственная ул. 12к1</p>
-                <p>Ежедневно с 11.00 до 23.00</p>
+                <h1 class="dialog-caption">
+                  <span class="border-bottom-1">
+                    TAKAMURA В СОЛНЦЕВО
+                  </span>
+                </h1>
+                <p class="dialog-description">Порт Пивных Дегустаторов</p>
+                <p class="dialog-description">Производственная ул. 12к1</p>
+                <p class="dialog-description">Ежедневно с 11.00 до 23.00</p>
               </div>
             </div>
             <div class="col-12">
               <div class="card">
-                <h1>TAKAMURA В ЧЕРТАНОВО</h1>
-                <p>ТЦ Прага</p>
-                <p>Россошанский пр-д 3</p>
-                <p>Ежедневно с 10.00 до 23.00</p>
+                <h1 class="dialog-caption">
+                  <span class="border-bottom-1">
+                    TAKAMURA В ЧЕРТАНОВО
+                  </span>
+                </h1>
+                <p class="dialog-description">ТЦ Прага</p>
+                <p class="dialog-description">Россошанский пр-д 3</p>
+                <p class="dialog-description">Ежедневно с 10.00 до 23.00</p>
               </div>
             </div>
           </div>

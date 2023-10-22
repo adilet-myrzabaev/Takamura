@@ -103,9 +103,11 @@ const visibleMap = ref(false)
 
 const openDialog = () => {
   visibleInfo.value = true
+  visibleMap.value = false
 }
 const openMap = () => {
   visibleMap.value = true
+  visibleInfo.value = false
 }
 
 const openPosition = () => {
@@ -135,67 +137,79 @@ const openPosition = () => {
                   <img src="https://takamura-eats.ru/custom/my/img/logo22.png" alt="">
                 </template>
                 <div class="flex flex-column align-items-center w-full">
-                  <h1>ИНФОРМАЦИЯ О ДОСТАВКЕ</h1>
-                  <p>Мы принимаем заказы с 10.00 до 22.30
+                  <h1 class="dialog-caption dialog-caption--big-text text-center">ИНФОРМАЦИЯ О ДОСТАВКЕ</h1>
+                  <p class="dialog-caption w-full sm:w-6 text-center line-height-2">Мы принимаем заказы с 10.00 до 22.30
                     Доставляем заказы с 11.00 до 23.20</p>
                 </div>
-                <h1>Доставка осуществляется по зонам:</h1>
+                <h1 class="dialog-caption">Доставка осуществляется по зонам:</h1>
                 <div class="grid">
-                  <div class="col-4">
+                  <div class="col-12 sm:col-6 md:col-4">
                     <div class="card">
-                      <h1>СЕРАЯ ЗОНА</h1>
-                      <p>Доставка от 700 р.</p>
-                      <p>Способы оплаты: картой на сайте,картой курьеру, наличными.</p>
-                      <p>Время доставки 1-1,2 часа.</p>
+                      <h1 class="dialog-caption">
+                        <span class="border-bottom-1">СЕРАЯ ЗОНА</span>
+                      </h1>
+                      <p class="dialog-description">Доставка от 700 р.</p>
+                      <p class="dialog-description">Способы оплаты: картой на сайте,картой курьеру, наличными.</p>
+                      <p class="dialog-description">Время доставки 1-1,2 часа.</p>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-12 sm:col-6 md:col-4">
                     <div class="card">
-                      <h1>ГОЛУБАЯ ЗОНА</h1>
-                      <p>Доставка от 1200 р.</p>
-                      <p>Оплата картой на сайте</p>
-                      <p>Время доставки 1-1,3 часа.</p>
+                      <h1 class="dialog-caption">
+                        <span class="border-bottom-1">ГОЛУБАЯ ЗОНА</span>
+                      </h1>
+                      <p class="dialog-description">Доставка от 1200 р.</p>
+                      <p class="dialog-description">Оплата картой на сайте</p>
+                      <p class="dialog-description">Время доставки 1-1,3 часа.</p>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-12 sm:col-6 md:col-4">
                     <div class="card">
-                      <h1>СИНЯЯ ЗОНА</h1>
-                      <p>Доставка от 2000 р.</p>
-                      <p>Оплата картой на сайте</p>
-                      <p>Время доставки 1-2 часа.</p>
+                      <h1 class="dialog-caption">
+                        <span class="border-bottom-1">СИНЯЯ ЗОНА</span>
+                      </h1>
+                      <p class="dialog-description">Доставка от 2000 р.</p>
+                      <p class="dialog-description">Оплата картой на сайте</p>
+                      <p class="dialog-description">Время доставки 1-2 часа.</p>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-12 sm:col-6 md:col-4">
                     <div class="card">
-                      <h1>РОЗОВАЯ ЗОНА</h1>
-                      <p>Доставка от 700 р.</p>
-                      <p>Оплата картой на сайте</p>
-                      <p>Время доставки 1-1,2 часа.</p>
+                      <h1 class="dialog-caption">
+                        <span class="border-bottom-1">РОЗОВАЯ ЗОНА</span>
+                      </h1>
+                      <p class="dialog-description">Доставка от 700 р.</p>
+                      <p class="dialog-description">Оплата картой на сайте</p>
+                      <p class="dialog-description">Время доставки 1-1,2 часа.</p>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-12 sm:col-6 md:col-4">
                     <div class="card">
-                      <h1>ЗЕЛЕНАЯ ЗОНА</h1>
-                      <p>Доставка от 1800 р.</p>
-                      <p>Оплата картой на сайте</p>
-                      <p>Время доставки 1-1,4 часа.</p>
+                      <h1 class="dialog-caption">
+                        <span class="border-bottom-1">ЗЕЛЕНАЯ ЗОНА</span>
+                      </h1>
+                      <p class="dialog-description">Доставка от 1800 р.</p>
+                      <p class="dialog-description">Оплата картой на сайте</p>
+                      <p class="dialog-description">Время доставки 1-1,4 часа.</p>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-12 sm:col-6 md:col-4">
                     <div class="card">
-                      <h1>КРАСНАЯ ЗОНА</h1>
-                      <p>Доставка от 2500 р.</p>
-                      <p>Оплата картой на сайте</p>
-                      <p>Время доставки 1-2 часа.</p>
+                      <h1 class="dialog-caption">
+                        <span class="border-bottom-1">КРАСНАЯ ЗОНА</span>
+                      </h1>
+                      <p class="dialog-description">Доставка от 2500 р.</p>
+                      <p class="dialog-description">Оплата картой на сайте</p>
+                      <p class="dialog-description">Время доставки 1-2 часа.</p>
                     </div>
                   </div>
                 </div>
-                <button class="mx-auto">Посмотреть на карте</button>
-                <p>
-                  <router-link to="tel:+7(499)1123817">+7 (499) 112-38-17</router-link>
+                <button class="mx-auto dialog-button" @click="openMap()">Посмотреть на карте</button>
+                <p class="contacts-default text-center">
+                  <a href="tel:+7(499)1123817">+7 (499) 112-38-17</a>
                 </p>
-                <p>
-                  <router-link to="mailto:feedback@takamura-eats.ru">feedback@takamura-eats.ru</router-link>
+                <p class="contacts-default text-center">
+                  <a href="mailto:feedback@takamura-eats.ru">feedback@takamura-eats.ru</a>
                 </p>
               </Dialog>
             </li>
@@ -208,19 +222,19 @@ const openPosition = () => {
                   <img  src="https://takamura-eats.ru/custom/my/img/logo22.png" alt="">
                 </template>
                 <div class="flex flex-column align-items-center w-full">
-                  <h1>ИНФОРМАЦИЯ О ДОСТАВКЕ</h1>
-                  <p>Мы принимаем заказы с 10.00 до 22.30
+                  <h1 class="dialog-caption dialog-caption--big-text">ИНФОРМАЦИЯ О ДОСТАВКЕ</h1>
+                  <p class="dialog-caption w-full sm:w-6 text-center line-height-2 mb-5">Мы принимаем заказы с 10.00 до 22.30
                     Доставляем заказы с 11.00 до 23.20</p>
                 </div>
                 <div>
                   <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A759b6fceb84b20d842bb3ebef1ee8694f7c066ee7fa7a5e87d9d719aada7e9b6&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
                 </div>
-                <button class="mx-auto">Посмотреть на карте</button>
-                <p>
-                  <router-link to="tel:+7(499)1123817">+7 (499) 112-38-17</router-link>
+                <button class="dialog-button" @click="openDialog()">Посмотреть списком</button>
+                <p class="contacts-default text-center">
+                  <a href="tel:+7(499)1123817">+7 (499) 112-38-17</a>
                 </p>
-                <p>
-                  <router-link to="mailto:feedback@takamura-eats.ru">feedback@takamura-eats.ru</router-link>
+                <p class="contacts-default text-center">
+                  <a href="mailto:feedback@takamura-eats.ru">feedback@takamura-eats.ru</a>
                 </p>
               </Dialog>
             </li>
@@ -238,15 +252,15 @@ const openPosition = () => {
                   <template #header>
                     <img src="https://takamura-eats.ru/custom/my/img/logo22.png" alt="">
                   </template>
-                  <p class="font-normal product-caption mb-0 cursor-pointer">ПРОГРАММА ЛОЯЛЬНОСТИ</p>
-                  <p class="font-normal product-caption mb-0 cursor-pointer">АКЦИИ</p>
-                  <p class="font-normal product-caption mb-0 cursor-pointer">МЕНЮ</p>
+                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">ПРОГРАММА ЛОЯЛЬНОСТИ</router-link>
+                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">АКЦИИ</router-link>
+                  <router-link to="/sets" class="font-normal product-caption mb-0 cursor-pointer">МЕНЮ</router-link>
                   <ul v-for="product in productsItems">
                     <li class="cursor-pointer product-caption font-light underline" @click="router.push(`${product.route}`); visible=false">
                       {{ product.label}}
                     </li>
                   </ul>
-                  <p class="font-normal product-caption mb-0 cursor-pointer">КОНТАКТЫ</p>
+                  <router-link to="/contacts" class="font-normal product-caption mb-0 cursor-pointer">КОНТАКТЫ</router-link>
                 </Dialog>
               </div>
             </li>
@@ -267,10 +281,6 @@ const openPosition = () => {
                   <div class="flex flex-column justify-content-center relative ml-3">
                     <h4 class="mb-1 text-left carousel-caption font-semibold">{{ slotProps.data.caption }}</h4>
                     <h6 class="mt-0 mb-3 text-left carousel-description">{{ slotProps.data.description }}</h6>
-                    <div class="absolute bottom-0 right-0 flex align-items-center">
-                      <button class=' pr-3 border-none bg-transparent'>что ещё </button>
-                      <i class='pi pi-angle-right'></i>
-                    </div>
                   </div>
 
                 </div>
@@ -280,7 +290,7 @@ const openPosition = () => {
         </div>
         <div class='grid tab-menu mt-5'>
           <div class='col-12'>
-            <TabMenu v-model:activeIndex="active" :model="productsItems">
+            <TabMenu class="mb-4" v-model:activeIndex="active" :model="productsItems">
               <template #item="{ item }">
                 <router-link v-if="item.route" v-slot="routerProps" :to="item.route" custom>
                   <a :href="routerProps.href" v-bind="item.action" @click="($event) => routerProps.navigate($event)" @keydown.enter.space="($event) => routerProps.navigate($event)">
@@ -293,6 +303,19 @@ const openPosition = () => {
             <router-view />
           </div>
         </div>
+        <footer class="mt-8">
+          <div class="container">
+            <p class="contacts-default">
+              <a href="tel:+7(499)1123817">+7 (499) 112-38-17</a>
+            </p>
+            <p class="contacts-default">
+              <a href="mailto:feedback@takamura-eats.ru">feedback@takamura-eats.ru</a>
+            </p>
+            <p class="contacts-default">
+              <a href="#">сотрудничество</a>
+            </p>
+          </div>
+        </footer>
       </div>
     </section>
 
