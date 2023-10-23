@@ -113,6 +113,9 @@ const openMap = () => {
 const openPosition = () => {
   visible.value = true;
 }
+// /////////////////////count/////////
+const count = ref(0)
+
 </script>
 
 <template>
@@ -239,7 +242,10 @@ const openPosition = () => {
               </Dialog>
             </li>
             <li class='menu__item'>
-              <router-link class='menu-link' to='/cart'><i class='pi pi-shopping-cart text-xl'></i></router-link>
+              <router-link class='menu-link relative' to='/cart'>
+                <i class='pi pi-shopping-cart text-xl'></i>
+                <span class="absolute top-50 left-100 text-sm font-light font-mono">{{ count }}</span>
+              </router-link>
             </li>
             <li>
               <button class='burger' @click="openPosition()" severity="help" >
