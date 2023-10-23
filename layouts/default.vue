@@ -258,15 +258,17 @@ const count = ref(0)
                   <template #header>
                     <img src="https://takamura-eats.ru/custom/my/img/logo22.png" alt="">
                   </template>
-                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">ПРОГРАММА ЛОЯЛЬНОСТИ</router-link>
-                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">АКЦИИ</router-link>
-                  <router-link to="/sets" class="font-normal product-caption mb-0 cursor-pointer">МЕНЮ</router-link>
-                  <ul v-for="product in productsItems">
-                    <li class="cursor-pointer product-caption font-light underline" @click="router.push(`${product.route}`); visible=false">
-                      {{ product.label}}
-                    </li>
-                  </ul>
-                  <router-link to="/contacts" class="font-normal product-caption mb-0 cursor-pointer">КОНТАКТЫ</router-link>
+                  <div class="flex flex-column">
+                    <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">ПРОГРАММА ЛОЯЛЬНОСТИ</router-link>
+                    <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">АКЦИИ</router-link>
+                    <router-link to="/sets" class="font-normal product-caption mb-0 cursor-pointer">МЕНЮ</router-link>
+                    <ul v-for="product in productsItems">
+                      <li class="cursor-pointer product-caption font-light underline" @click="router.push(`${product.route}`); visible=false">
+                        {{ product.label}}
+                      </li>
+                    </ul>
+                    <router-link to="/contacts" class="font-normal product-caption mb-0 cursor-pointer">КОНТАКТЫ</router-link>
+                  </div>
                 </Dialog>
               </div>
             </li>
