@@ -50,12 +50,15 @@ const  countNum = () => {
 const  minusNum = () => {
   count.value--
 }
+
+// /////////////
+const cartProducts = ref([])
 </script>
 
 <template>
   <div>
     <div class='grid product-parent'>
-      <Card v-for='product in products' class='col-6 md:col-4 lg:col-3 '>
+      <Card v-for='product in products' class='col-12 sm:col-6 md:col-4 lg:col-3'>
         <template #header>
           <img class="w-full" :src='product.img' :alt='product.caption'>
         </template>

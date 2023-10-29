@@ -190,15 +190,38 @@ const openPosition = () => {
                   <template #header>
                     <img src="https://takamura-eats.ru/custom/my/img/logo22.png" alt="">
                   </template>
-                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">ПРОГРАММА ЛОЯЛЬНОСТИ</router-link>
-                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">АКЦИИ</router-link>
-                  <router-link to="" class="font-normal product-caption mb-0 cursor-pointer">МЕНЮ</router-link>
-                  <ul v-for="product in productsItems">
-                    <li class="cursor-pointer product-caption font-light underline" @click="router.push(`${product.route}`); visible=false">
-                      {{ product.label}}
-                    </li>
-                  </ul>
-                  <router-link to="/contacts" class="font-normal product-caption mb-0 cursor-pointer">КОНТАКТЫ</router-link>
+                  <div class="flex flex-column">
+                    <NuxtLink to="" class="font-normal product-caption mb-0 cursor-pointer">ПРОГРАММА ЛОЯЛЬНОСТИ</NuxtLink>
+                    <NuxtLink to="" class="font-normal product-caption mb-0 cursor-pointer">АКЦИИ</NuxtLink>
+                    <NuxtLink to="/" class="font-normal product-caption mb-0 cursor-pointer">МЕНЮ</NuxtLink>
+                    <ul>
+                      <li @click="router.push('/sets');">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">НАБОРЫ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/sushi')">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">СУШИ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/rolls')">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">РОЛЛЫ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/warmRolls')">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">ТЕПЛЫЕ РОЛЛЫ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/maki')">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">МАКИ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/salads')">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">САЛАТЫ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/drinks')">
+                        <NuxtLink class="cursor-pointer product-caption font-light underline">НАПИТКИ</NuxtLink>
+                      </li>
+                      <li @click="router.push('/sauces')">
+                        <NuxtLink  class="cursor-pointer product-caption font-light underline">СОУСЫ</NuxtLink>
+                      </li>
+                    </ul>
+                    <NuxtLink to="/contacts" class="font-normal product-caption mb-0 cursor-pointer">КОНТАКТЫ</NuxtLink>
+                  </div>
                 </Dialog>
               </div>
             </li>

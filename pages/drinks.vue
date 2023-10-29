@@ -1,5 +1,4 @@
 <script lang='ts' setup>
-import { ref } from 'vue';
 const products = ref([
   {
     id: 0,
@@ -26,7 +25,7 @@ const  minusNum = () => {
   <div>
     <div class='grid product-parent'>
       <h1>Напитки нет</h1>
-      <Card v-for='product in products' class='col-6 md:col-4 lg:col-3 '>
+      <Card v-for='product in products' class='col-12 sm:col-6 md:col-4 lg:col-3'>
         <template #header>
           <img class="w-full" :src='product.img' :alt='product.caption'>
         </template>
